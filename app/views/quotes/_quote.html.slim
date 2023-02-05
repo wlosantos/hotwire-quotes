@@ -1,9 +1,11 @@
-div class='flex justify-between items-center mb-2 bg-white rounded-lg shadow-md px-4 py-3'
-  = link_to quote.name, quote_path(quote), class: 'text-sky-500 hover:text-sky-600'
+= turbo_frame_tag quote, class:'flex justify-between items-center mb-2 bg-white rounded-lg shadow px-4 py-3 hover:shadow-md transition' do
+  = link_to quote.name, quote_path(quote), data:{ turbo_frame: '_top'}, class: 'text-sky-500 hover:text-sky-600'
+
   div class='flex gap-2'
     = button_to quote_path(quote), method: :delete, class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded'
       span class='hidden' Delete
       = heroicon 'trash', options: { class: 'w-5 h-5' }
+
     = link_to edit_quote_path(quote), class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded' do
       span class='hidden' Edit
       = heroicon 'pencil-square', options: { class: 'w-5 h-5' }
