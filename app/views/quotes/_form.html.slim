@@ -1,7 +1,8 @@
 = simple_form_for quote do |f|
   - if quote.errors.any?
-    div
+    div class='text-sm bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4'
       = quote.errors.full_messages.to_sentence.capitalize
-
-  = f.input :name, input_html: { autofocus: true, class: 'w-full' }
-  = f.submit class: 'bg-blue-500 hover:bg-blue-700 text-sm text-white font-medium py-2 px-4 rounded'
+  div class='flex justify-between gap-2'
+    div class='w-full'
+      = f.input :name, input_html: { autofocus: true, class: 'w-full rounded shadow placeholder-gray-400 border-gray-400 placeholder:text-sm' }
+    = f.submit class: 'bg-blue-500 hover:bg-blue-700 text-sm text-white font-medium py-2 px-4 rounded inline'
