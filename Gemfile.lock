@@ -120,11 +120,6 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
-    docile (1.4.0)
-    dotenv (2.8.1)
-    dotenv-rails (2.8.1)
-      dotenv (= 2.8.1)
-      railties (>= 3.2)
     enumerate_it (3.2.4)
       activesupport (>= 5.0.7.2)
     erubi (1.12.0)
@@ -211,8 +206,6 @@ GEM
     public_suffix (5.0.1)
     puma (5.6.5)
       nio4r (~> 2.0)
-    pundit (2.3.0)
-      activesupport (>= 3.0.0)
     racc (1.6.2)
     rack (2.2.6.2)
     rack-test (2.0.2)
@@ -257,7 +250,6 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
-    rolify (6.0.1)
     rouge (3.30.0)
     rspec-core (3.12.1)
       rspec-support (~> 3.12.0)
@@ -307,12 +299,6 @@ GEM
     simple_form (5.2.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
-    simplecov (0.22.0)
-      docile (~> 1.1)
-      simplecov-html (~> 0.11)
-      simplecov_json_formatter (~> 0.1)
-    simplecov-html (0.12.3)
-    simplecov_json_formatter (0.1.4)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -378,7 +364,6 @@ DEPENDENCIES
   debug
   devise
   devise-tailwindcssed!
-  dotenv-rails
   enumerate_it
   factory_bot_rails (~> 6.1)
   faker
@@ -392,10 +377,8 @@ DEPENDENCIES
   pry-nav
   pry-rails
   puma (~> 5.0)
-  pundit
   rails (~> 7.0.4)
   redis (~> 4.0)
-  rolify
   rspec-rails
   rubocop
   rubocop-rails
@@ -403,7 +386,6 @@ DEPENDENCIES
   selenium-webdriver
   shoulda-matchers
   simple_form
-  simplecov
   slim
   slim-rails
   sprockets-rails
