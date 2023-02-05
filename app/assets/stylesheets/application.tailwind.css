@@ -11,3 +11,8 @@
 }
 
 */
+@layer component {
+  .label-visible {
+    @apply hidden;
+  }
+}

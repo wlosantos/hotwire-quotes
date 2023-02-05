@@ -1,0 +1,7 @@
+= simple_form_for quote do |f|
+  - if quote.errors.any?
+    div
+      = quote.errors.full_messages.to_sentence.capitalize
+
+  = f.input :name, input_html: { autofocus: true, class: 'w-full' }
+  = f.submit class: 'bg-blue-500 hover:bg-blue-700 text-sm text-white font-medium py-2 px-4 rounded'
