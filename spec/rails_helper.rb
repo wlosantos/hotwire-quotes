@@ -34,6 +34,7 @@ end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.include ViewComponent::TestHelpers, type: :component
 
   # Setting Rspec documentation
   config.color = true

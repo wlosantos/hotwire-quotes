@@ -10,12 +10,12 @@ export default class extends Controller {
       setTimeout(()=>{
         this.element.classList.remove("opacity-0");
         this.element.classList.add('transition', "opacity-100");
-      }, 200);
-    }, 1000);
+      }, 100);
+    }, 500);
 
     setTimeout(()=>{
       this.close();
-    }, 6000);
+    }, 5000);
   }
 
   close(){

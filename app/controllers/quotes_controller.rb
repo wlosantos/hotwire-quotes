@@ -17,7 +17,10 @@ class QuotesController < ApplicationController
       respond_to do |format|
         format.html { redirect_to quotes_path, notice: 'Quote was successfully created.' }
         format.turbo_stream do
-          flash.now[:notice] = 'Quote was successfully created.'
+          flash.now[:notice] = {
+            title: 'success',
+            message: 'Quote was successfully created.'
+          }
         end
       end
     else
@@ -52,7 +55,10 @@ class QuotesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to quotes_path, notice: 'Quote was successfully destroyed.' }
       format.turbo_stream do
-        flash.now[:notice] = 'Quote was successfully destroyed.'
+        flash.now[:notice] = {
+          title: 'success',
+          message: 'Quote was successfully destroyed.'
+        }
       end
     end
   end
