@@ -29,9 +29,11 @@ class QuotesController < ApplicationController
     if @quote.update(quote_params)
       respond_to do |format|
         format.html { redirect_to quotes_path, notice: 'Quote was successfully updated.' }
-        format.turbo_stream { render turbo_stream:[
-          turbo_stream.replace(@quote, @quote),
-        ]}
+        format.turbo_stream do
+          render turbo_stream: [
+            turbo_stream.replace(@quote, @quote)
+          ]
+        end
       end
     else
       render :edit, status: :unprocessable_entity
