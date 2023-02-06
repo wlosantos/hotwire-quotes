@@ -1,0 +1,7 @@
+= link_to sanitize('&larr; Back to quotes'), quotes_path, class: 'text-sm text-sky-500 block text-right'
+header
+  h1 class='text-3xl font-bold mb-2' New Quote
+
+= turbo_frame_tag @quote do
+  div class='bg-white rounded-lg shadow px-4 py-3 hover:shadow-md transition'
+    = render 'form', quote: @quote
