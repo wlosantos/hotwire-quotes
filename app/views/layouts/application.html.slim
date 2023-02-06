@@ -13,5 +13,9 @@ html
   body class='bg-slate-50'
     header class='w-full bg-white shadow-lg'
       = render 'layouts/navbar'
+
     main class='w-full lg:w-2/4 mx-auto mt-16'
+      section id="flash" class='flash' data-controller='removals' data-action='animationend->removals#remove'
+        = render 'layouts/notification'
+
       = yield
