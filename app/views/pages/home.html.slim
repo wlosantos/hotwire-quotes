@@ -1,0 +1,10 @@
+div class='w-auto flex justify-center mt-10'
+  div class='flex flex-col gap-2 justify-center'
+    h1 class='text-4xl font-bold inline' Quote editor
+    p class='text-xl text-gray-600 inline' A blazing fast quote editor <span class='block md:inline'>built with Hotwire</span> 
+
+    div class='mt-4 text-center'
+      - if user_signed_in?
+        = link_to 'View quote', new_quote_path, class: 'px-4 py-3 font-medium bg-gray-200 text-gray-600 rounded shadow inline-block'
+      - else
+        = link_to 'Sign in', new_user_session_path, class: 'px-4 py-3 font-medium bg-sky-500 text-white rounded shadow inline'
