@@ -1,0 +1,16 @@
+div class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto hidden" data-controller="notification"
+  div class='rounded-lg shadow-xs overflow-hidden'
+    div class='p-4'
+      div class='flex items-start w-full gap-2'
+        div class='shrink'
+          div class='text-xl'
+            = icon_notice()
+        div class='ml-3 flex-1 pt-0.5 w-full'
+          p class='text-sm leading-5 font-medium text-gray-900'
+            = @data[:title]
+          - if @data[:message].present?
+            p class='mt-1 text-sm leading-5 text-gray-500'
+              = @data[:message]
+        div class='flex-none'
+          button data-action='click->notification#close'
+            i class='uil uil-times text-xl leading-5'
