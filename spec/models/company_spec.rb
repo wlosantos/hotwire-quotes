@@ -11,6 +11,11 @@ RSpec.describe Company, type: :model do
     it { is_expected.to validate_presence_of(:name) }
   end
 
+  describe 'associations' do
+    it { is_expected.to have_many(:users).dependent(:destroy) }
+    it { is_expected.to have_many(:quotes).dependent(:destroy) }
+  end
+
   describe 'create a new company' do
     context 'successfully' do
       let(:company) { build(:company) }
