@@ -1,8 +1,10 @@
 nav class='container mx-auto flex justify-between items-center py-3'
   - if user_signed_in?
     div class='flex gap-2 items-center divide-x divide-gray-300'
-      h1 class='text-3xl font-bold' w3n templates
-      p class='text-sm text-gray-600 pl-2 tracking-wider' Current user name
+      h1 class='text-3xl font-bold' 
+        = current_company.name.split(' ')[0]
+      p class='text-sm text-gray-600 pl-2 tracking-wider'
+        = current_user.email
     div
       = link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'px-4 py-2 font-medium bg-gray-200 text-gray-600 rounded shadow inline-block'
   - else
