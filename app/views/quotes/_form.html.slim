@@ -4,5 +4,15 @@
       = quote.errors.full_messages.to_sentence.capitalize
   div class='flex justify-between gap-2'
     div class='w-full'
-      = f.input :name, input_html: { autofocus: true, class: 'w-full rounded shadow placeholder-gray-400 border-gray-400 placeholder:text-sm' }
-    = f.submit class: 'bg-blue-500 hover:bg-blue-700 text-sm text-white font-medium py-2 px-4 rounded inline'
+      = f.input :name, input_html: { autofocus: true, class: 'w-full border-sky-500 rounded shadow placeholder-gray-400 focus:border-sky-500 placeholder:text-sm' }
+
+    div class='flex items-center gap-2'
+      = link_to quotes_path, class: 'bg-gray-200 text-gray-600 p-2 rounded hover:bg-gray-300' do
+        - if action_name == 'new'
+          = heroicon 'x-mark', options:{ class: 'w-5 h-5' }
+        - else
+          = heroicon 'arrow-uturn-left', options:{ class: 'w-5 h-5' }
+
+      = f.button :button, class: 'text-white bg-green-500 p-2 hover:bg-green-600 rounded' do
+        span class='hidden' submit
+        = heroicon 'check', options:{ class: 'w-5 h-5' }
