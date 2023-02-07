@@ -45,12 +45,12 @@ class LineItemDatesController < ApplicationController
     @line_item_date.destroy
     respond_to do |format|
       format.html { redirect_to quote_path(@quote), notice: 'Date was successfully destroyed.' }
-      # format.turbo_stream do
-      #   flash.now[:notice] = {
-      #     title: 'Success',
-      #     message: 'Line Item Date was successfully destroyed.'
-      #   }
-      # end
+      format.turbo_stream do
+        flash.now[:notice] = {
+          title: 'Success',
+          message: 'Line Item Date was successfully destroyed.'
+        }
+      end
     end
   end
 
