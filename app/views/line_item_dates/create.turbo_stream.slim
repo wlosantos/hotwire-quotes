@@ -7,4 +7,4 @@
   = turbo_stream.prepend @line_item_date do
     = render @line_item_date, quote: @quote
 
-= turbo_stream.prepend 'flash', partial: 'layouts/notification'
+= render_turbo_frame_flash_messages
