@@ -11,6 +11,10 @@ RSpec.describe Quote, type: :model do
     it { is_expected.to validate_presence_of(:name) }
   end
 
+  describe 'associations' do
+    it { is_expected.to belong_to(:company) }
+  end
+
   describe 'create a quote' do
     context 'successfully' do
       let(:quote) { build(:quote) }
@@ -20,6 +24,12 @@ RSpec.describe Quote, type: :model do
     context 'failure' do
       let(:quote) { build(:quote, name: nil) }
       it { expect(quote).to_not be_valid }
+
+      it 'quote whitout company' do
+        quote = build(:quote, company: nil)
+        expect(quote).to_not be_valid
+        expect(quote.errors[:company]).to include('must exist')
+      end
     end
   end
 end

@@ -1,0 +1,17 @@
+nav class='container mx-auto flex justify-between items-center py-3 px-4'
+  - if user_signed_in?
+    div class='flex gap-2 items-center divide-x divide-gray-300'
+      h1 class='text-3xl font-bold'
+        = link_to root_path do
+          = current_user.company.name.split(' ')[0]
+      p class='text-sm text-gray-600 pl-2 tracking-wider hidden md:inline'
+        = current_user.email
+    div
+      = link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete }, class: 'px-4 py-2 font-medium bg-gray-200 text-gray-600 rounded shadow inline-block'
+  - else
+    h1 class='text-3xl font-bold'
+      = heroicon 'cube', options:{ class: 'h-6 w-6 inline-block text-gray-600'}
+      = link_to root_path do
+        span Quote editor
+    div
+      = link_to 'Sign in', new_user_session_path, class: 'px-4 py-2 font-medium bg-sky-500 text-white rounded shadow inline'
