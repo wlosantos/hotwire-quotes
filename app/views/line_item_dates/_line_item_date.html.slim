@@ -20,9 +20,11 @@
         li Price
         li
 
-    = render line_item_date.line_items, quote: quote, line_item_date: line_item_date 
+    = turbo_frame_tag nested_dom_id(line_item_date, 'line_items') do
+      = render line_item_date.line_items, quote: quote, line_item_date: line_item_date
+    = turbo_frame_tag nested_dom_id(line_item_date, LineItem.new)
 
     footer class='mt-4 w-full border gorder-gray-200 border-dashed p-6 flex justify-center rounded-md'
-      = link_to [:new, quote, line_item_date, :line_item], data:{ turbo_frame: '_top'}, class: 'text-sm font-medium text-white bg-sky-500 hover:bg-sky-600 p-2 rounded shadow inline-block' do
+      = link_to [:new, quote, line_item_date, :line_item], data:{ turbo_frame: nested_dom_id(line_item_date, LineItem.new)}, class: 'text-sm font-medium text-white bg-sky-500 hover:bg-sky-600 p-2 rounded shadow inline-block' do
         = heroicon 'plus', options: { class: 'w-5 h-5 inline' }
         span Add item

@@ -2,5 +2,6 @@
 header
   h1 class='text-3xl font-bold mb-2' New item for #{l(@line_item_date.date, format: :long)}
 
-div class='bg-white rounded-lg shadow px-4 py-3 hover:shadow-md transition'
-  = render 'form', quote: @quote, line_item_date: @line_item_date, line_item: @line_item
+= turbo_frame_tag nested_dom_id(@line_item_date, LineItem.new) do
+  div class='bg-white rounded-lg shadow px-4 py-3 hover:shadow-md transition mt-2'
+    = render 'form', quote: @quote, line_item_date: @line_item_date, line_item: @line_item
