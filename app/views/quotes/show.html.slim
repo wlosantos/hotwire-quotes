@@ -4,9 +4,12 @@ header class='flex justify-between items-center mb-4'
   h1 class='text-3xl font-bold' #{ @quote.name }
 
   div
-    = link_to new_quote_line_item_date_path(@quote), class: 'inline-flex items-center px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded shadow text-sm font-medium' do
+    = link_to new_quote_line_item_date_path(@quote), data: { turbo_frame: dom_id(LineItemDate.new) }, class: 'inline-flex items-center px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded shadow text-sm font-medium' do
       = heroicon 'calendar', options:{ class: 'w-5 h-5 inline mr-2' }
       span New date
 
 div
-  = render @line_item_dates, quote: @quote
+  = turbo_frame_tag LineItemDate.new
+div class='mt-4'
+  = turbo_frame_tag 'line_item_dates' do
+    = render @line_item_dates, quote: @quote
