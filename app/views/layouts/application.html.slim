@@ -6,12 +6,17 @@ html
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
 
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
 
-  body class='bg-slate-50'
+  body class='bg-slate-50 relative'
+    section id="flash" class='flash absolute top-20 right-5'
+      = render 'layouts/notification'
+
     header class='w-full bg-white shadow-lg'
       = render 'layouts/navbar'
-    main class='w-full lg:w-2/4 mx-auto mt-16'
+
+    main class='w-full lg:w-2/4 mx-auto mt-16 px-4 md:px-0'
       = yield
