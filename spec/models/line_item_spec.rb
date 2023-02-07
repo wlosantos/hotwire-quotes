@@ -23,7 +23,7 @@ RSpec.describe LineItem, type: :model do
     it { is_expected.to validate_presence_of(:quantity) }
     it { is_expected.to validate_numericality_of(:quantity).only_integer.is_greater_than(0) }
     it { is_expected.to validate_presence_of(:unit_price) }
-    it { is_expected.to validate_numericality_of(:unit_price).is_greater_than(0) }
+    it { is_expected.to validate_numericality_of(:unit_price).is_greater_than(0.0) }
   end
 
   describe 'delegations' do

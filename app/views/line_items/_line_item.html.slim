@@ -9,10 +9,10 @@ div class='grid grid-cols-7 mt-4 text-sm'
   div
     = number_to_currency line_item.unit_price
   div class='flex gap-2 justify-end'
-      = button_to [quote, line_item_date, line_item], method: :delete, form: { data: {turbo_confirm: 'Are you sure?'}}, class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded'
+      = button_to [quote, line_item_date, line_item], method: :delete, form: { data: {turbo_frame: '_top'}}, class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded'
         span class='hidden' Delete
         = heroicon 'trash', options: { class: 'w-5 h-5' }
 
-      = link_to [:edit, quote, line_item_date, line_item], class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded' do
+      = link_to [:edit, quote, line_item_date, line_item], data:{ turbo_frame: '_top'}, class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded' do
         span class='hidden' Edit
         = heroicon 'pencil-square', options: { class: 'w-5 h-5' }
