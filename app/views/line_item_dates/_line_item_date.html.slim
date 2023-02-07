@@ -3,7 +3,7 @@ div class='flex justify-between items-center mb-2'
     = l(line_item_date.date, format: :long)
 
   div class='flex gap-2'
-    = button_to [quote, line_item_date], method: :delete, class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded'
+    = button_to [quote, line_item_date], method: :delete, form: { data: {turbo_confirm: 'Are you sure?'}}, class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded'
       span class='hidden' Delete
       = heroicon 'trash', options: { class: 'w-5 h-5' }
 

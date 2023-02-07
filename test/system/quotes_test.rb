@@ -46,6 +46,6 @@ class QuotesTest < ApplicationSystemTestCase
     assert_text @quote.name
 
     click_on 'Delete', match: :first
-    assert_text @quote.name
+    assert_text 'Quote was successfully destroyed.'
   end
 end

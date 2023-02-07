@@ -35,6 +35,8 @@ en:
       labels:
         quote:
           name: Name
+        line_item_date:
+          name: Date
 
   helpers:
     submit:
