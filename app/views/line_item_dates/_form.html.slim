@@ -1,7 +1,6 @@
 = simple_form_for [quote, line_item_date], html:{class: 'w-full'} do |f|
-  - if line_item_date.errors.any?
-    div class='text-sm bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4'
-      = line_tem_date.errors.full_messages.to_sentence.capitalize
+  = form_error_notification(line_item_date)
+
   div class='flex justify-between gap-2'
     div class='w-full'
       = f.input :date, html5: true, input_html: { autofocus: true, class: 'w-full border-sky-500 rounded shadow placeholder-gray-400 focus:border-sky-500 placeholder:text-sm' }
