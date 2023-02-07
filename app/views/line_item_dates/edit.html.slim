@@ -1,0 +1,6 @@
+= link_to sanitize('&larr; Back to quote'), quote_path(@quote), class: 'text-sm text-sky-500 block text-right mb-4'
+
+header
+  h1 class='text-2xl font-bold mb-2' Edit date
+
+= render 'form', quote: @quote, line_item_date: @line_item_date
