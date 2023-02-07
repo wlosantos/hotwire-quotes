@@ -44,4 +44,27 @@ RSpec.describe LineItemDate, type: :model do
       end
     end
   end
+
+  describe 'methods' do
+    describe '#previous_date' do
+      context 'when previous date exists' do
+        let!(:quote) { create(:quote) }
+        let!(:line_item_date) { create(:line_item_date, date: Time.zone.today, quote:) }
+        let!(:line_item_date2) { create(:line_item_date, date: Time.zone.today + 1.day, quote:) }
+
+        it 'returns the previous line item date' do
+          expect(line_item_date2.previous_date).to eq(line_item_date)
+        end
+      end
+
+      context 'when previous date does not exist' do
+        let!(:quote) { create(:quote) }
+        let!(:line_item_date) { create(:line_item_date, date: Time.zone.today, quote:) }
+
+        it 'returns nil' do
+          expect(line_item_date.previous_date).to be_nil
+        end
+      end
+    end
+  end
 end

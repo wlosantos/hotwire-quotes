@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def render_turbo_frame_flash_messages
+    turbo_stream.prepend 'flash', partial: 'layouts/notification'
+  end
+
   def form_error_notification(object)
     return unless object.errors.any?
 
