@@ -10,7 +10,7 @@
     div
       = number_to_currency line_item.unit_price
     div class='flex gap-2 justify-end'
-        = button_to [quote, line_item_date, line_item], method: :delete, form: { data: {turbo_frame: '_top'}}, class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded'
+        = button_to [quote, line_item_date, line_item], method: :delete, class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded'
           span class='hidden' Delete
           = heroicon 'trash', options: { class: 'w-5 h-5' }
 
