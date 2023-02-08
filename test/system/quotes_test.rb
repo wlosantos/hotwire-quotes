@@ -48,4 +48,8 @@ class QuotesTest < ApplicationSystemTestCase
     click_on 'Delete', match: :first
     assert_text 'Quote was successfully destroyed.'
   end
+
+  test '#total_price returns the sum of all line items' do
+    assert_equal 1250, quotes(:first).total_price.to_i
+  end
 end
