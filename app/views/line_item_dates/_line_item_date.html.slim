@@ -1,7 +1,7 @@
 = turbo_frame_tag line_item_date, class:'mt-4 block' do
   = turbo_frame_tag dom_id(line_item_date, :edit) do
     div class='flex justify-between items-center mb-2'
-      h2 class='text-2xl font-semibold'
+      h2 class='text-xl font-semibold md:text-2xl'
         = l(line_item_date.date, format: :long)
 
       div class='flex gap-2'
