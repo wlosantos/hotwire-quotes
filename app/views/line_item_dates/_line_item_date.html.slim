@@ -1,7 +1,7 @@
 = turbo_frame_tag line_item_date, class:'mt-4 block' do
   = turbo_frame_tag dom_id(line_item_date, :edit) do
     div class='flex justify-between items-center mb-2'
-      h2 class='text-2xl font-semibold'
+      h2 class='text-xl font-semibold md:text-2xl'
         = l(line_item_date.date, format: :long)
 
       div class='flex gap-2'
@@ -14,12 +14,13 @@
           = heroicon 'pencil-square', options: { class: 'w-5 h-5' }
 
   div class='bg-white p-4 rounded-lg shadow-md overflow-hidden'
-    header class='bg-gray-200 p-2 w-full rounded'
-      ul class='text-sm font-medium uppercase tracking-wide grid grid-cols-7 gap-1'
-        li class='col-span-4' Article
-        li class='' Quantity
-        li Price
-        li
+    div class='hidden md:block'
+      header class='bg-gray-200 p-2 w-full rounded'
+        ul class='text-sm font-medium uppercase tracking-wide grid grid-cols-7 gap-1'
+          li class='col-span-4' Article
+          li class='' Quantity
+          li Price
+          li
 
     = turbo_frame_tag nested_dom_id(line_item_date, 'line_items') do
       = render line_item_date.line_items, quote: quote, line_item_date: line_item_date

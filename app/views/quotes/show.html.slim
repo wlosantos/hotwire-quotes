@@ -1,7 +1,7 @@
 = link_to sanitize('&larr; Back to quotes'), quotes_path, class: 'text-sm text-sky-500 block text-right mb-4'
 
-header class='flex justify-between items-center mb-4'
-  h1 class='text-3xl font-bold' #{ @quote.name }
+header class='flex flex-col md:flex-row justify-between md:items-center mb-4 gap-2'
+  h1 class='text-2xl font-semibold md:text-3xl md:font-bold' #{ @quote.name }
 
   div
     = link_to new_quote_line_item_date_path(@quote), data: { turbo_frame: dom_id(LineItemDate.new) }, class: 'inline-flex items-center px-4 py-2 bg-sky-500 hover:bg-sky-600 text-white rounded shadow text-sm font-medium' do
