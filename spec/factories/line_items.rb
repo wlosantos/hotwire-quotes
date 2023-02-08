@@ -4,6 +4,6 @@ FactoryBot.define do
     name { Faker::Commerce.product_name }
     description { Faker::Lorem.sentence }
     quantity { rand(1...10) }
-    unit_price { Faker::Commerce.price }
+    unit_price { rand(2.0...100.0) }
   end
 end

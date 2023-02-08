@@ -33,4 +33,16 @@ RSpec.describe Quote, type: :model do
       end
     end
   end
+
+  describe 'methods' do
+    context '#total_price' do
+      let!(:quote) { create(:quote) }
+      let!(:line_item_date) { create(:line_item_date, quote:) }
+      let!(:line_item) { create_list(:line_item, 5, line_item_date:) }
+
+      it 'quote total price' do
+        expect(quote.total_price).to eq(Quote.find(quote.id).total_price)
+      end
+    end
+  end
 end
