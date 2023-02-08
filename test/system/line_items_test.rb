@@ -8,7 +8,7 @@ class LineItemsTest < ApplicationSystemTestCase
 
     @quote          = quotes(:first)
     @line_item_date = line_item_dates(:today)
-    @line_item      = line_items(:first)
+    @line_item      = line_items(:room_today)
 
     visit quote_path(@quote)
   end

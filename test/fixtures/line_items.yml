@@ -1,7 +1,7 @@
 room_today:
   line_item_date: today
   name: Meeting room
-  descripton: A cosy meeting room for 10 people
+  description: A cosy meeting room for 10 people
   quantity: 1
   unit_price: 1000
 
