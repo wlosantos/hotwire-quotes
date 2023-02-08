@@ -2,7 +2,7 @@
   div class='col-span-full'
     = form_error_notification(line_item_date)
   div class='col-span-6'
-    = f.input :name, label: 'Item name', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-sm placeholder:font-semibold placeholder:text-gray-400 w-full', placeholder: 'Name of the article'}
+    = f.input :name, label: 'Name', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-sm placeholder:font-semibold placeholder:text-gray-400 w-full', placeholder: 'Name of the article'}
   
   div class='col-span-1'
     = f.input :quantity, label: 'Quantity', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-xs placeholder:font-semibold placeholder:text-gray-400 w-full', placeholder: 'Quantity'}
@@ -23,4 +23,4 @@
         = heroicon 'check', options:{ class: 'w-5 h-5' }
   
   div class='col-span-full'
-    = f.input :description, label: 'Item description', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-xs placeholder:text-gray-400 w-full', placeholder: 'Short description about the article (optional)'}
+    = f.input :description, label: 'Description', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-xs placeholder:text-gray-400 w-full', placeholder: 'Short description about the article (optional)'}

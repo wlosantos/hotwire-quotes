@@ -1,16 +1,17 @@
 = turbo_frame_tag line_item_date, class:'mt-4 block' do
-  div class='flex justify-between items-center mb-2'
-    h2 class='text-2xl font-semibold'
-      = l(line_item_date.date, format: :long)
+  = turbo_frame_tag dom_id(line_item_date, :edit) do
+    div class='flex justify-between items-center mb-2'
+      h2 class='text-2xl font-semibold'
+        = l(line_item_date.date, format: :long)
 
-    div class='flex gap-2'
-      = button_to [quote, line_item_date], method: :delete, form: { data: {turbo_confirm: 'Are you sure?'}}, class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded'
-        span class='hidden' Delete
-        = heroicon 'trash', options: { class: 'w-5 h-5' }
+      div class='flex gap-2'
+        = button_to [quote, line_item_date], method: :delete, form: { data: {turbo_confirm: 'Are you sure?'}}, class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded'
+          span class='hidden' Delete
+          = heroicon 'trash', options: { class: 'w-5 h-5' }
 
-      = link_to [:edit, quote, line_item_date], class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded' do
-        span class='hidden' Edit
-        = heroicon 'pencil-square', options: { class: 'w-5 h-5' }
+        = link_to [:edit, quote, line_item_date], class: 'text-sm text-gray-600 bg-gray-200 hover:bg-gray-300 p-2 rounded' do
+          span class='hidden' Edit
+          = heroicon 'pencil-square', options: { class: 'w-5 h-5' }
 
   div class='bg-white p-4 rounded-lg shadow-md overflow-hidden'
     header class='bg-gray-200 p-2 w-full rounded'
