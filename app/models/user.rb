@@ -8,4 +8,12 @@ class User < ApplicationRecord
          :validatable
 
   belongs_to :company
+
+  before_validation :set_company, on: :create
+
+  protected
+
+  def set_company
+    self.company ||= Company.first
+  end
 end
