@@ -14,6 +14,6 @@ class User < ApplicationRecord
   protected
 
   def set_company
-    self.company = Company.first
+    self.company ||= Company.first
   end
 end
