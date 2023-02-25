@@ -13,5 +13,6 @@ nav class='container mx-auto flex justify-between items-center py-3 px-4'
       = heroicon 'cube', options:{ class: 'h-6 w-6 inline-block text-gray-600'}
       = link_to root_path do
         span Quote editor
-    div
+    div class='flex gap-2 items-center'
       = link_to 'Sign in', new_user_session_path, class: 'px-4 py-2 font-medium bg-sky-500 text-white rounded shadow inline'
+      = link_to 'Sign up', new_user_registration_path, class: 'px-4 py-2 font-medium bg-gray-200 text-gray-600 rounded shadow inline ml-2'
