@@ -8,7 +8,7 @@ Este é o resultado de uma compilação de estudos que estive fazendo (02/2023).
 ```
   - Hotwire
   - Stimulus
-  - Job
+  - Background Job
   - View Component
   - Rspec
 ```
