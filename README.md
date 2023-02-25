@@ -18,3 +18,6 @@ Este é o resultado de uma compilação de estudos que estive fazendo (02/2023).
 * Tailwind
 
 * Postgresql
+<div style="width:800px">
+![image social](/app/assets/images/quotes-social.png?raw=true "Image social")
+<div>
