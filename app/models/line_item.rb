@@ -5,7 +5,7 @@ class LineItem < ApplicationRecord
   validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 999 }
   validates :unit_price, presence: true, numericality: { greater_than: 0.0, less_than: 100_000.0 }
 
-  validate :word_is_long, :descript_is_long
+  validate :word_is_long
 
   delegate :quote, to: :line_item_date
 
