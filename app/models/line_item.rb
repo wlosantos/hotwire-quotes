@@ -2,8 +2,8 @@ class LineItem < ApplicationRecord
   belongs_to :line_item_date
 
   validates :name, presence: true, length: { maximum: 60 }
-  validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validates :unit_price, presence: true, numericality: { greater_than: 0.0 }
+  validates :quantity, presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 999 }
+  validates :unit_price, presence: true, numericality: { greater_than: 0.0, less_than: 10_0000.0 }
 
   validate :word_is_long, :descript_is_long
 
