@@ -2,10 +2,10 @@
   div class='col-span-full'
     = form_error_notification(line_item)
   div class='col-span-full md:col-span-6'
-    = f.input :name, label: 'Name', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-sm placeholder:font-semibold placeholder:text-gray-400 w-full', placeholder: 'Name of the article'}
+    = f.input :name, label: 'Name', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-sm placeholder:font-semibold placeholder:text-gray-400 w-full', placeholder: 'Name of the article', maxlength: 60 }
   
   div class='col-span-5 md:col-span-1'
-    = f.input :quantity, label: 'Quantity', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-xs placeholder:font-semibold placeholder:text-gray-400 w-full', placeholder: 'Quantity'}
+    = f.input :quantity, label: 'Quantity', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-xs placeholder:font-semibold placeholder:text-gray-400 w-full', placeholder: 'Quantity', maxlength: 5}
   
   div class='col-span-5 md:col-span-2'
     = f.input :unit_price, label: 'Unit price', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-xs placeholder:font-semibold placeholder:text-gray-400 w-full', placeholder: 'Unit price'}
@@ -23,7 +23,7 @@
         = heroicon 'check', options:{ class: 'w-5 h-5' }
   
   div class='col-span-full'
-    = f.input :description, label: 'Description', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-xs placeholder:text-gray-400 w-full', placeholder: 'Short description about the article (optional)'}
+    = f.input :description, label: 'Description', input_html:{class: 'border-gray-300 focus:border-sky-500 focus:ring focus:ring-sky-200 focus:ring-opacity-50 rounded-md placeholder:text-xs placeholder:text-gray-400 w-full', placeholder: 'Short description about the article (optional)', maxlength: 200 }
 
   div class='md:hidden flex items-center'
     div class='flex items-center gap-2'

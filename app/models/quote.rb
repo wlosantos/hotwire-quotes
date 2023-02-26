@@ -3,7 +3,8 @@ class Quote < ApplicationRecord
   has_many :line_item_dates, dependent: :destroy
   has_many :line_items, through: :line_item_dates
 
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 60 }
+  validate :name_bug
 
   scope :ordered, -> { order(id: :desc) }
 
@@ -15,5 +16,13 @@ class Quote < ApplicationRecord
 
   def total_price
     line_items.sum(&:total_price)
+  end
+
+  private
+
+  def name_bug
+    return unless name.present? && name.length > 10 && !name.include?(' ')
+
+    errors.add(:name, 'word invalid')
   end
 end
